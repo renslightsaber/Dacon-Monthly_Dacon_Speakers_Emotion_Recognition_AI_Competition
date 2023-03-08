@@ -17,11 +17,31 @@ import matplotlib.pyplot as plt
 import torch 
 import torch.nn as nn
 
-from torch.optim import lr_scheduler
+# from torch.optim import lr_scheduler
 from torch.utils.data import Dataset, DataLoader
 
 
-######### Set Seeed ############
+############## Scheduler ##################
+import torch.optim as optim
+
+class CosineWarmupScheduler(optim.lr_scheduler._LRScheduler):
+    def __init__(self, optimizer, warmup, max_iters):
+        self.warmup = warmup
+        self.max_num_iters = max_iters
+        super().__init__(optimizer)
+
+    def get_lr(self):
+        lr_factor = self.get_lr_factor(epoch=self.last_epoch)
+        return [base_lr * lr_factor for base_lr in self.base_lrs]
+
+    def get_lr_factor(self, epoch):
+        lr_factor = 0.5 * (1 + np.cos(np.pi * epoch / self.max_num_iters))
+        if epoch <= self.warmup:
+            lr_factor *= epoch * 1.0 / self.warmup
+        return lr_factor
+
+
+############# Set Seeed ####################
 def set_seed(seed=42):
     '''Sets the seed of the entire notebook so results are the same every time we run.
     This is for REPRODUCIBILITY.'''
@@ -37,7 +57,7 @@ def set_seed(seed=42):
     
     
 
-####### add speaker info #########
+########### add speaker info ################
 def add_speaker_info(train):
     train.loc[:, "Utterance_2"] = train.Speaker.str.upper() + ": " +  train.Utterance
     print(train.head())
@@ -45,7 +65,7 @@ def add_speaker_info(train):
   
   
 
-####### make essay #########
+########## make essay ####################
 def make_essay(df, id_num = 0, num_sentences= 4):
     
     temp = df[df.Dialogue_ID == id_num]
@@ -87,7 +107,7 @@ def make_essay(df, id_num = 0, num_sentences= 4):
         
         
         
-###### Data ######
+############### Data ##################
 def dacon_competition_data( base_path = config['base_path'], add_speaker = True, make_essay_option= True):
 
     train = pd.read_csv(base_path + 'train.csv')
@@ -114,7 +134,7 @@ def dacon_competition_data( base_path = config['base_path'], add_speaker = True,
 
   
   
-###### Visualize #######
+################ Visualize #####################
 def make_plot(result, stage = "Loss"):
 
     plot_from = 0
