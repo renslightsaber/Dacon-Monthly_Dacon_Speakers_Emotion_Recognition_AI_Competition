@@ -24,6 +24,8 @@ import torchmetrics
 
 from utils import *
 
+from tqdm.auto import tqdm, trange
+
 
 ### Train One Epoch
 def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_classes, scheduler = None, grad_clipping = False):
