@@ -97,6 +97,10 @@ def main(config):
     train['new_target'] = train.Target.apply(lambda x: train_encode[x])
     print(train.head())
     
+    ## n_classes
+    n_classes = train.new_target.nunique()
+    print("n_classes: ", n_classes)
+    
     ## Drop Unnecessary Columns 
     train.drop(['ID', 'Utterance', 'Speaker', 'Target', ], axis =1, inplace = True)
     print(train.shape)
