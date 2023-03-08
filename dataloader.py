@@ -51,7 +51,12 @@ class MyDataset(Dataset):
           
           
 ## prepare_loaders()          
-def prepare_loader(train, fold, max_length, tokenizer, collate_fn, bs):
+def prepare_loader(train, 
+                   fold,
+                   tokenizer, 
+                   max_length, 
+                   bs,
+                   collate_fn):
     
     train_df = train[train.kfold != fold].reset_index(drop=True)
     valid_df = train[train.kfold == fold].reset_index(drop=True)
@@ -65,6 +70,7 @@ def prepare_loader(train, fold, max_length, tokenizer, collate_fn, bs):
     train_loader = DataLoader(train_ds,
                               batch_size = bs, 
                               collate_fn=collate_fn, 
+                              ## Dependency on device
                               # num_workers = 2, 
                               # pin_memory = True, 
                               shuffle = True, 
@@ -73,6 +79,7 @@ def prepare_loader(train, fold, max_length, tokenizer, collate_fn, bs):
     valid_loader = DataLoader(valid_ds,
                               batch_size = bs],
                               collate_fn=collate_fn,
+                              ## Dependency on device
                               # num_workers = 2,
                               # pin_memory = True,
                               shuffle = False, )
