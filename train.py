@@ -81,10 +81,14 @@ def define():
   
   
 def main(config):
-
+    
+    ## Data
     train, test, ss = dacon_competition_data(base_path = config.base_path, add_speaker = True, make_essay_option= True)
     print("Dialogue_ID == 1")
     print(train[train.Dialogue_ID == 1])
+    
+    ## Set Seed
+    set_seed(config.seed)
     
     ## Target Encoding
     train_encode = {v: k for k, v in enumerate(train.Target.unique())}
