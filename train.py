@@ -56,6 +56,8 @@ def define():
     p.add_argument('--base_path', type = str, default = "./data/", help="Data Folder Path")
     p.add_argument('--model_save', type = str, default = "./models/", help="Data Folder Path")
     p.add_argument('--sub_path', type = str, default = "./submission/", help="Data Folder Path")
+   
+    p.add_argument('--model', type = str, default = 'tae898/emoberta-base' help="HuggingFace Pretrained Model")
     
     p.add_argument('--n_folds', type = int, default = 5, help="Folds")
     p.add_argument('--n_epochs', type = int, default = 5, help="Epochs")
