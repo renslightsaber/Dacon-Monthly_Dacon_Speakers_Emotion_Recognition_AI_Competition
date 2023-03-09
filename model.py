@@ -39,7 +39,7 @@ class MeanPooling(nn.Module):
     def __init__(self, model_name):
         super(Model, self).__init__()
         
-        if model_name == 'monologg/kobigbird-bert-base':
+        if model_name == 'google/bigbird-roberta-base':
             self.model = AutoModel.from_pretrained(model_name, attention_type="original_full")
         else: 
             self.model = AutoModel.from_pretrained(model_name) 
