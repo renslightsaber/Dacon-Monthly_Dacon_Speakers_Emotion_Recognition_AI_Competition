@@ -61,8 +61,7 @@ def define():
     p.add_argument('--n_epochs', type = int, default = 5, help="Epochs")
     
     p.add_argument('--seed', type = int, default = 2022, help="Seed")
-    p.add_argument('--train_bs', type = int, default = 16, help="Train Batch Size")
-    p.add_argument('--valid_bs', type = int, default = 16, help="Valid Batch Size")
+    p.add_argument('--bs', type = int, default = 16, help="Batch Size")
     
     p.add_argument('--max_length', type = int, default = 256, help="Max Length")
     
@@ -147,13 +146,13 @@ def main(config):
 
         # DataLoaders
         # collate_fn = DataCollatorWithPadding(tokenizer=config['tokenizer'] )
-        train_loader, valid_loader = prepare_loader(train, fold, config.max_length, tokenizer, DataCollatorWithPadding(tokenizer=tokenizer))
+        train_loader, valid_loader = prepare_loader(train, fold, tokenizer, config.max_length, bs, DataCollatorWithPadding(tokenizer=tokenizer))
 
         # Define Model because of KFold
-        model = Model(config.model).to(config.device)
+        model = Model(config.model).to(device)
 
         # Loss Function
-        loss_fn = nn.NLLLoss().to(config.device)
+        loss_fn = nn.NLLLoss().to(device)
         print("Loss Function Defined")
 
         # Define Opimizer and Scheduler
@@ -166,7 +165,7 @@ def main(config):
         
         print("자세히 알고 싶으면 코드를 봅시다.")
         ## Start Training
-        model, best_score = run_train(model, config.model_save, train_loader, valid_loader, loss_fn, optimizer, device, n_classes, fold, scheduler, config["grad_clipping"], config["n_epochs"])
+        model, best_score = run_train(model, config.model_save, train_loader, valid_loader, loss_fn, optimizer, device, n_classes, fold, scheduler, config.grad_clipping, config.n_epochs)
     
         ## Best F1_Score per Fold 줍줍
         if type(best_score) == torch.Tensor:
