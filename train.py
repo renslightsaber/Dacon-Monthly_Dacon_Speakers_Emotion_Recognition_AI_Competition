@@ -61,7 +61,7 @@ def define():
     p.add_argument('--n_epochs', type = int, default = 5, help="Epochs")
     
     p.add_argument('--seed', type = int, default = 2022, help="Seed")
-    p.add_argument('--bs', type = int, default = 16, help="Batch Size")
+    p.add_argument('--train_bs', type = int, default = 16, help="Batch Size")
     
     p.add_argument('--max_length', type = int, default = 256, help="Max Length")
     
@@ -146,7 +146,7 @@ def main(config):
 
         # DataLoaders
         # collate_fn = DataCollatorWithPadding(tokenizer=config['tokenizer'] )
-        train_loader, valid_loader = prepare_loader(train, fold, tokenizer, config.max_length, bs, DataCollatorWithPadding(tokenizer=tokenizer))
+        train_loader, valid_loader = prepare_loader(train, fold, tokenizer, config.max_length, config.train_bs, DataCollatorWithPadding(tokenizer=tokenizer))
 
         # Define Model because of KFold
         model = Model(config.model).to(device)
