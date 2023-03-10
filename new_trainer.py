@@ -15,6 +15,7 @@ import pandas as pd
 ## Pytorch Import
 import torch 
 import torch.nn as nn
+import torch.optim as optim
 
 from torch.optim import lr_scheduler
 from torch.utils.data import Dataset, DataLoader
@@ -32,8 +33,8 @@ def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
 
     ################ torchmetrics: initialize metric #########################
 
-    metric_acc = torchmetrics.Accuracy(task='multiclass', average = 'macro', num_classes=n_classes,).to(config['device'])
-    metric_f1 = torchmetrics.F1Score(task="multiclass", average = 'macro', num_classes=n_classes,).to(config['device'])
+    metric_acc = torchmetrics.Accuracy(task='multiclass', average = 'macro', num_classes=n_classes,).to(device)
+    metric_f1 = torchmetrics.F1Score(task="multiclass", average = 'macro', num_classes=n_classes,).to(device)
     
     ############################################################################
 
@@ -112,8 +113,8 @@ def valid_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
 
     ################ torchmetrics: initialize metric #########################
 
-    metric_acc = torchmetrics.Accuracy(task='multiclass', average = 'macro', num_classes=n_classes).to(config['device'])
-    metric_f1 = torchmetrics.F1Score(task="multiclass", average = 'macro', num_classes=n_classes).to(config['device'])
+    metric_acc = torchmetrics.Accuracy(task='multiclass', average = 'macro', num_classes=n_classes).to(device)
+    metric_f1 = torchmetrics.F1Score(task="multiclass", average = 'macro', num_classes=n_classes).to(device)
     
     ############################################################################
     
