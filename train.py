@@ -61,7 +61,7 @@ def define():
     p.add_argument('--make_essay_option', type = bool, default = True, help="concatenate some Utterances")
     p.add_argument('--make_essay_sentences', type = int, default = 4, help="Number of previous Utterances to concatenate")
    
-    p.add_argument('--model', type = str, default = 'tae898/emoberta-base' help="HuggingFace Pretrained Model")
+    p.add_argument('--model', type = str, default = 'tae898/emoberta-base', help="HuggingFace Pretrained Model")
     
     p.add_argument('--n_folds', type = int, default = 5, help="Folds")
     p.add_argument('--n_epochs', type = int, default = 5, help="Epochs")
