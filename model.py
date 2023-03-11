@@ -35,7 +35,7 @@ class MeanPooling(nn.Module):
       
       
       
- class Model(nn.Module):
+class Model(nn.Module):
     def __init__(self, model_name):
         super(Model, self).__init__()
         
