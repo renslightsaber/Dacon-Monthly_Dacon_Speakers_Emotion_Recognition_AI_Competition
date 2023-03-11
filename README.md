@@ -1,5 +1,5 @@
 # [[현재 공사 중]🏅[Dacon] 월간 데이콘 발화자의 감정인식 AI 경진대회](https://dacon.io/competitions/official/236027/overview/description)
-<img src="/img/스크린샷 2023-03-11 오후 2.43.36.png" width="99%"></img>
+<img src="/img/스크린샷 2023-03-11 오후 2.47.15.png" width="99%"></img>
 ## Competition Info
  - Period: 2022.11.01 - 2022.12.12
  - Joined as: Team with [A.RYANG](https://github.com/nomaday)
