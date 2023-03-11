@@ -93,9 +93,12 @@ def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
     # Type - ACC, F1
     train_acc = metric_acc.compute()
     train_f1 = metric_f1.compute()
-
-    print("Train's Accuracy: %.2f | F1_SCORE %.3f" % (train_acc, train_f1))
-    print()
+    
+    # tqdm Progress bar will show values below
+    # To avoid a lot of progress bar lines
+    # In Colab(=ipynb file), print(" ... ") below will appear :)
+    # print("Train's Accuracy: %.2f | F1_SCORE %.3f" % (train_acc, train_f1))
+    # print()
 
     # Reseting internal state such that metric ready for new data
     metric_acc.reset()
@@ -164,8 +167,11 @@ def valid_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
     valid_acc = metric_acc.compute()
     valid_f1 = metric_f1.compute()
 
-    print("Valid's Accuracy: %.2f | F1_SCORE %.3f" % (valid_acc, valid_f1))
-    print()
+    # tqdm Progress bar will show values below
+    # To avoid a lot of progress bar lines
+    # In Colab(=ipynb file), print(" ... ") below will appear :)
+    # print("Valid's Accuracy: %.2f | F1_SCORE %.3f" % (valid_acc, valid_f1))
+    # print()
 
     # Reseting internal state such that metric ready for new data
     metric_acc.reset()
