@@ -26,7 +26,7 @@ $ pip install -qqq --no-cache-dir transformers sentencepiece
 $ python train.py --base_path './data/' \
                   --model_save '/content/drive/MyDrive/깃헙/Projects/Dacon Speakers/' \
                   --sub_path '/content/drive/MyDrive/깃헙/Projects/Dacon Speakers/' \
-                  --model "monologg/kobigbird-bert-base" \
+                  --model "tae898/emoberta-base" \
                   --add_speaker_info True\
                   --make_essay_option True\
                   --make_essay_sentences 4\
@@ -70,7 +70,7 @@ $ python train.py --base_path './data/' \
 $ python inference.py --base_path './data/' \
                       --model_save '/content/drive/MyDrive/ ... /Dacon Speakers/' \
                       --sub_path '/content/drive/MyDrive/ ... /Dacon Speakers/' \
-                      --model "monologg/kobigbird-bert-base" \
+                      --model "tae898/emoberta-base" \
                       --add_speaker_info True\
                       --make_essay_option True\
                       --make_essay_sentences 4\
