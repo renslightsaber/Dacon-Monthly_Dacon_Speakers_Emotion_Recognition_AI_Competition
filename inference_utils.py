@@ -30,7 +30,7 @@ def make_testloader(test,
 
     test_ds = MyDataset(test, 
                         tokenizer = tokenizer,
-                        max_length = config['max_length'],
+                        max_length = max_length,
                         mode = "test")
 
     test_loader = DataLoader(test_ds,
