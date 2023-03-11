@@ -22,10 +22,9 @@
  - Ensemble of Other Pretrained Models after Fine-tuning.
 
  
-## Certificate
-<img src="/img/1673529536217.jpeg" width="48%"></img>
-
-
- 
 ## How to train or inference in CLI? 
 [Check Here](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/how_to_train_inference.md) 
+
+ 
+## Certificate
+<img src="/img/1673529536217.jpeg" width="48%"></img>
