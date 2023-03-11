@@ -11,19 +11,21 @@ from copy import deepcopy
 import numpy as np
 import pandas as pd
 
+# Utils
+from tqdm.auto import tqdm, trange
+
 import matplotlib.pyplot as plt
 
 ## Pytorch Import
 import torch 
 import torch.nn as nn
+import torch.optim as optim
 
 # from torch.optim import lr_scheduler
 from torch.utils.data import Dataset, DataLoader
 
 
 ############## Scheduler ##################
-import torch.optim as optim
-
 class CosineWarmupScheduler(optim.lr_scheduler._LRScheduler):
     def __init__(self, optimizer, warmup, max_iters):
         self.warmup = warmup
@@ -55,14 +57,12 @@ def set_seed(seed=42):
     os.environ['PYTHONHASHSEED'] = str(seed)
     
     
-    
 
 ########### add speaker info ################
 def add_speaker_info(train):
     train.loc[:, "Utterance_2"] = train.Speaker.str.upper() + ": " +  train.Utterance
     print(train.head())
     return train
-  
   
 
 ########## make essay ####################
@@ -108,7 +108,9 @@ def make_essay(df, id_num = 0, num_sentences= 4):
         
         
 ############### Data ##################
-def dacon_competition_data( base_path = config['base_path'], add_speaker = True, make_essay_option= True):
+def dacon_competition_data(base_path, 
+                           add_speaker = True, 
+                           make_essay_option= True):
 
     train = pd.read_csv(base_path + 'train.csv')
     test = pd.read_csv(base_path + 'test.csv')
@@ -122,6 +124,10 @@ def dacon_competition_data( base_path = config['base_path'], add_speaker = True,
     if add_speaker:
         train = add_speaker_info(train)
         test = add_speaker_info(test)
+    else:
+        # Column Rename to 'Utterance_2'
+        train.rename(columns={'Utterance':'Utterance_2'}, inplace = True)
+        test.rename(columns={'Utterance':'Utterance_2'}, inplace = True)
 
     # make_essay   
     if make_essay_option:
@@ -129,6 +135,10 @@ def dacon_competition_data( base_path = config['base_path'], add_speaker = True,
             make_essay(df = train, id_num = num)
         for num in test.Dialogue_ID.unique():
             make_essay(df = test, id_num = num)
+    else:
+        # Column Rename to 'essay'
+        train.rename(columns={'Utterance_2':'essay'}, inplace = True)
+        test.rename(columns={'Utterance_2':'essay'}, inplace = True)
 
     return train, test, ss
 
