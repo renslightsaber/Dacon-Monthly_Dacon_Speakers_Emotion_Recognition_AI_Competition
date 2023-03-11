@@ -1,5 +1,5 @@
  
-# [link도 공사중] How to train or inference in CLI? [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EPaUyBIP4VER23AKPoLBPjW-Gdn8Bv6b?usp=share_link)
+# [아직도 공사중] How to train or inference in CLI? [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10rirr6XBtPYl2m-HZaLl6CFIzqR-qBc9?usp=sharing)
 
 #### You can check Jupyter Notebook Version at [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QchQzwbGpOvXDRMzWXi5k-d_A_h4w-c9?usp=share_link) 
 ## install
