@@ -109,8 +109,9 @@ def make_essay(df, id_num = 0, num_sentences= 4):
         
 ############### Data ##################
 def dacon_competition_data(base_path, 
-                           add_speaker = True, 
-                           make_essay_option= True):
+                            add_speaker = True, 
+                            make_essay_option = True,
+                            make_essay_sentences = 4):
 
     train = pd.read_csv(base_path + 'train.csv')
     test = pd.read_csv(base_path + 'test.csv')
@@ -132,9 +133,13 @@ def dacon_competition_data(base_path,
     # make_essay   
     if make_essay_option:
         for num in train.Dialogue_ID.unique():
-            make_essay(df = train, id_num = num)
+            make_essay(df = train, 
+                       id_num = num, 
+                       num_sentences= make_essay_sentences)
         for num in test.Dialogue_ID.unique():
-            make_essay(df = test, id_num = num)
+            make_essay(df = test, 
+                       id_num = num, 
+                       num_sentences= make_essay_sentences)
     else:
         # Column Rename to 'essay'
         train.rename(columns={'Utterance_2':'essay'}, inplace = True)
