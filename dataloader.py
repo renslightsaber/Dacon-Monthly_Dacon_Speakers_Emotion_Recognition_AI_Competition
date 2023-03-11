@@ -21,9 +21,6 @@ class MyDataset(Dataset):
         return len(self.dataset)
 
     def __getitem__(self, idx):
-        # Original
-        # text = self.dataset['Utterance'][idx]  
-
         text = self.dataset.essay[idx]
 
         inputs = self.tokenizer.encode_plus(
@@ -47,7 +44,6 @@ class MyDataset(Dataset):
             return {
             'input_ids': inputs['input_ids'],
             'attention_mask': inputs['attention_mask'],}
-          
           
           
 ## prepare_loaders()          
