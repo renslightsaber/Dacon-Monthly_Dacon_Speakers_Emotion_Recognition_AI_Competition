@@ -1,7 +1,7 @@
  
 # [link도 공사중] How to train or inference in CLI? [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EPaUyBIP4VER23AKPoLBPjW-Gdn8Bv6b?usp=share_link)
 
- 
+#### You can check Jupyter Notebook Version at [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QchQzwbGpOvXDRMzWXi5k-d_A_h4w-c9?usp=share_link) 
 ## install
 #### [torchmetrics](https://torchmetrics.readthedocs.io/en/stable/)
 ```python
@@ -53,7 +53,7 @@ $ python train.py --base_path './data/' \
 - `max_length` : Max Length (Default: 128) for HuggingFace Tokenizer
 - `grad_clipping`: [Gradient Clipping](https://neptune.ai/blog/understanding-gradient-clipping-and-how-it-can-fix-exploding-gradients-problem)
 - `ratio` : 데이터를 Split하여 `train`(학습) 과 `valid`(성능 평가)를 만드는 비율을 의미. 정확히는 `train`의 Size 결정
-- `device`: GPU를 통한 학습이 가능하다면, `cuda` 로 설정할 수 있다.
+- `device`: GPU를 통한 학습이 가능하다면, `cuda` 로 설정 
 - `learning_rate`, `weight_decay`, `min_lr`, `T_max` 등은 생략 
 
 - [`train.py`](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/train.py) 참고!   
@@ -86,10 +86,8 @@ $ python inference.py --base_path './data/' \
 - `model`: Huggingface의 Pratrained Model (Default: `"monologg/kobigbird-bert-base"`)
 - `n_folds`  : `train.py`에서 진행항 KFold 수
 - `n_epochs` : train했을 때의 Epoch 수 (submission 파일명에 사용)  
-- `device`: GPU를 통한 학습이 가능하다면, `cuda` 로 설정할 수 있다.
+- `device`: GPU를 통한 학습이 가능하다면, `cuda` 로 설정 가능
 
-
-#### [link도 공사중]Jupyter Notebook Version: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mB05pvu7d83KQX6dyYlj4jxdeUSEt7pJ?usp=sharing) 
 
 
 
