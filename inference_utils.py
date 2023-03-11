@@ -49,7 +49,7 @@ def make_testloader(test,
 @torch.no_grad()
 def test_func(model, 
               dataloader, 
-              device = device):
+              device):
     preds= []
 
     model.eval()
@@ -88,9 +88,9 @@ def trained_model_paths(n_folds,
   
 ############# Inference ###############
 def inference(model_paths, 
-              model_name = config['model'], 
-              dataloader = test_loader, 
-              device= device):
+              model_name, 
+              dataloader, 
+              device):
 
     final_preds = []
     
