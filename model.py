@@ -18,9 +18,7 @@ from torch.utils.data import Dataset, DataLoader
 ## Transforemr Import
 from transformers import AutoTokenizer, AutoModel, AutoConfig
 
-
-
-
+########### Mean Pooling ################
 class MeanPooling(nn.Module):
     def __init__(self):
         super(MeanPooling, self).__init__()
@@ -34,7 +32,7 @@ class MeanPooling(nn.Module):
         return mean_embeddings
       
       
-      
+########### Model ################      
 class Model(nn.Module):
     def __init__(self, model_name):
         super(Model, self).__init__()
