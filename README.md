@@ -12,11 +12,19 @@
  - PUBLIC  : 0.54517 | 11st /259 
  - PRIVATE : 0.54712 | 10th /259 
  - Final: 5th 
- 
+
+## What I learned from this Competition:
+ - How to make and train `Context` in Dialogues.
+ - importance of `Speaker` info in this competition. 
+
+## If there were more time, we could have 
+ - Researched how to deal with problem 'Class Imbalance' and applied.
+ - Ensemble of Other Pretrained Models after Fine-tuning.
+
 
 ### How to train or inference in CLI? [Check Here](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/how_to_train_inference.md) 
  
-## 수상인증서
+## Certificate
 <img src="/img/1673529536217.jpeg" width="48%"></img>
 
 
