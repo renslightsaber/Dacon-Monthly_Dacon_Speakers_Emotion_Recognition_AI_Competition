@@ -91,7 +91,7 @@ def main(config):
     train, test, ss = dacon_competition_data(base_path = config.base_path, 
                                              add_speaker = config.add_speaker_info, 
                                              make_essay_option= config.make_essay_option,
-                                             make_essay_sentences = config.make_essay_sentecnes,)
+                                             make_essay_sentences = config.make_essay_sentences)
     print("Dialogue_ID == 1")
     print(train[train.Dialogue_ID == 1])
     
