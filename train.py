@@ -56,6 +56,10 @@ def define():
     p.add_argument('--base_path', type = str, default = "./data/", help="Data Folder Path")
     p.add_argument('--model_save', type = str, default = "./models/", help="Data Folder Path")
     p.add_argument('--sub_path', type = str, default = "./submission/", help="Data Folder Path")
+    
+    p.add_argument('--add_speaker_info', type = bool, default = True, help=" Speaker.upper() + Utterance")
+    p.add_argument('--make_essay_option', type = bool, default = True, help="concatenate some Utterances")
+    p.add_argument('--make_essay_sentences', type = int, default = 4, help="Number of previous Utterances to concatenate")
    
     p.add_argument('--model', type = str, default = 'tae898/emoberta-base' help="HuggingFace Pretrained Model")
     
@@ -84,7 +88,10 @@ def define():
 def main(config):
     
     ## Data
-    train, test, ss = dacon_competition_data(base_path = config.base_path, add_speaker = True, make_essay_option= True)
+    train, test, ss = dacon_competition_data(base_path = config.base_path, 
+                                             add_speaker = config.add_speaker_info, 
+                                             make_essay_option= config.make_essay_option,
+                                             make_essay_sentences = config.make_essay_sentecnes,)
     print("Dialogue_ID == 1")
     print(train[train.Dialogue_ID == 1])
     
