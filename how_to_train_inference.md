@@ -40,8 +40,6 @@ $ python train.py --base_path './data/' \
 - `base_path` : Data가 저장된 경로 (Default: `./data/`)
 - `sub_path`  : `submission.csv` 제출하는 경로
 - `model_save`: 학습된 모델이 저장되는 경로
-- `clean_text`: `mecab` tokenizer로 데이터를 tokenize 시켰다가 다시 `" ".join`으로 복원시킬 것에 대한 여부
-- `test_and_ss`: `test.csv`, `sample_submission.csv`파일을 사용 여부
 - `model`: Huggingface의 Pratrained Model (Default: `"tae898/emoberta-base"`)
 - `add_speaker_info`: `Speaker`를 대문자화 시킨 후 `Utterance`와 결합 (`Speaker`.upper() + `:` + `Utterance`)
 - `make_essay_option`: 이전 N개의 index의 `Utternce`들과 현재 index의 `Utterance`를 결합 ([`utils.py`](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/utils.py) 참고)
