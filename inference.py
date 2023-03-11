@@ -88,8 +88,6 @@ def define():
     p.add_argument('--learning_rate', type = float, default = 5e-5, help="lr")
     p.add_argument('--min_lr', type = float, default = 1e-6, help="Min LR")
     p.add_argument('--weight_decay', type = float, default = 1e-6, help="Weight Decay")
-
-    p.add_argument('--grad_clipping', type = bool, default = False, help="Gradient Clipping")
     p.add_argument('--device', type = str, default = "cuda", help="CUDA or MPS or CPU?")
 
 
