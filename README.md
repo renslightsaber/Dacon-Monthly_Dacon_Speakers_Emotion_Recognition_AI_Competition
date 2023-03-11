@@ -18,7 +18,7 @@
  - importance of `Speaker` info in this competition. 
 
 ## If there were more time, we could have 
- - Researched how to deal with problem 'Class Imbalance' and applied.
+ - Researched how to deal with 'Class Imbalanced' problem and applied.
  - Ensemble of Other Pretrained Models after Fine-tuning.
 
 
