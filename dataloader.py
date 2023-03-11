@@ -73,7 +73,7 @@ def prepare_loader(train,
                               drop_last= True)
 
     valid_loader = DataLoader(valid_ds,
-                              batch_size = bs],
+                              batch_size = bs,
                               collate_fn=collate_fn,
                               ## Dependency on device
                               # num_workers = 2,
