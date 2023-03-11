@@ -23,8 +23,8 @@ $ pip install -qqq --no-cache-dir transformers sentencepiece
 ```python
 
 $ python train.py --base_path './data/' \
-                  --model_save '/content/drive/MyDrive/깃헙/Projects/Dacon Speakers/' \
-                  --sub_path '/content/drive/MyDrive/깃헙/Projects/Dacon Speakers/' \
+                  --model_save '/content/drive/MyDrive/ ... /Dacon Speakers/' \
+                  --sub_path '/content/drive/MyDrive/ ... /Dacon Speakers/' \
                   --model "tae898/emoberta-base" \
                   --add_speaker_info True\
                   --make_essay_option True\
