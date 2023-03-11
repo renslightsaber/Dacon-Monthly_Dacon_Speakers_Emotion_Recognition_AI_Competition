@@ -39,7 +39,7 @@ $ python train.py --base_path './data/' \
 - `base_path` : Data가 저장된 경로 (Default: `./data/`)
 - `sub_path`  : `submission.csv` 제출하는 경로
 - `model_save`: 학습된 모델이 저장되는 경로
-- `model`: Huggingface의 Pratrained Model (Default: `"tae898/emoberta-base"`)
+- `model`: Huggingface Pratrained Model (Default: `"tae898/emoberta-base"`)
 - `add_speaker_info`: `Speaker`를 대문자화 시킨 후 `Utterance`와 결합 (`Speaker`.upper() + `:` + `Utterance`)
 - `make_essay_option`: 이전 N개의 index의 `Utternce`들과 현재 index의 `Utterance`를 결합 ([`utils.py`](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/utils.py) 참고)
 - `make_essay_sentences`: 결합할 이전 `Utternce`들의 수(= N)
@@ -79,7 +79,7 @@ $ python inference.py --base_path './data/' \
 - `base_path` : Data가 저장된 경로 (Default: `./data/`)
 - `sub_path`  : `submission.csv` 제출하는 경로
 - `model_save`: 학습된 모델이 저장되는 경로
-- `model`: Huggingface의 Pratrained Model (Default: `"tae898/emoberta-base"`)
+- `model`: train 했을 때의 Huggingface Pratrained Model (Default: `"tae898/emoberta-base"`)
 - `n_folds`  : `train.py`에서 진행항 KFold 수
 - `n_epochs` : train했을 때의 Epoch 수 (submission 파일명에 사용)  
 - `device`: GPU를 통한 학습이 가능하다면, `cuda` 로 설정 가능
