@@ -1,4 +1,4 @@
-# [[현재 공사 중]🏅[Dacon] 월간 데이콘 발화자의 감정인식 AI 경진대회](https://dacon.io/competitions/official/236027/overview/description)
+# [[공사 중]🏅[Dacon] 월간 데이콘 발화자의 감정인식 AI 경진대회](https://dacon.io/competitions/official/236027/overview/description)
 <img src="/img/스크린샷 2023-03-11 오후 2.47.15.png" width="99%"></img>
 ## Competition Info
  - Period: 2022.11.01 - 2022.12.12
@@ -26,5 +26,5 @@
 [Check Here](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/how_to_train_inference.md) 
 
  
-## Certificate
+## Certificate of Prize
 <img src="/img/1673529536217.jpeg" width="48%"></img>
