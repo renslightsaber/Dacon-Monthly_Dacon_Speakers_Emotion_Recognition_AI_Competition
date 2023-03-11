@@ -83,7 +83,7 @@ $ python inference.py --base_path './data/' \
 - `base_path` : Data가 저장된 경로 (Default: `./data/`)
 - `sub_path`  : `submission.csv` 제출하는 경로
 - `model_save`: 학습된 모델이 저장되는 경로
-- `model`: Huggingface의 Pratrained Model (Default: `"monologg/kobigbird-bert-base"`)
+- `model`: Huggingface의 Pratrained Model (Default: `"tae898/emoberta-base"`)
 - `n_folds`  : `train.py`에서 진행항 KFold 수
 - `n_epochs` : train했을 때의 Epoch 수 (submission 파일명에 사용)  
 - `device`: GPU를 통한 학습이 가능하다면, `cuda` 로 설정 가능
