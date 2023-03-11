@@ -7,7 +7,10 @@
  - TASK: `Classification`
  - Evaluation Metric: `Macro F1 Score`
  - Environment: Colab 
- 
+
+### How to train or inference in CLI? 
+[Check Here](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/how_to_train_inference.md) 
+
 ## Result "🏅 Prized as 5th"
  - PUBLIC  : 0.54517 | 11st /259 
  - PRIVATE : 0.54712 | 10th /259 
@@ -17,5 +20,4 @@
 <img src="/img/1673529536217.jpeg" width="48%"></img>
 
 
-### [How to train or inference?](https://github.com/renslightsaber/Dacon_Speakers_Emotion_Recognition/blob/main/how_to_train_inference.md) 
  
